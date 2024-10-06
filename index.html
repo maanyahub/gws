@@ -70,6 +70,35 @@
             margin-top: 10px;
         }
 
+        /* Floating Elements */
+        .flower, .star, .teddy {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-size: cover;
+            animation: float 5s ease-in-out infinite;
+        }
+
+        .flower {
+            background-image: url('https://img.icons8.com/emoji/96/000000/blossom--v2.png');
+            top: 10%;
+            left: 10%;
+        }
+
+        .star {
+            background-image: url('https://img.icons8.com/emoji/96/000000/star-emoji.png');
+            top: 20%;
+            left: 70%;
+            animation-delay: 2s;
+        }
+
+        .teddy {
+            background-image: url('https://img.icons8.com/emoji/96/000000/teddy-bear.png');
+            top: 60%;
+            left: 40%;
+            animation-delay: 4s;
+        }
+
         /* Keyframes */
         @keyframes glowText {
             0% {
@@ -103,6 +132,18 @@
             }
         }
 
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
         /* Background parallax effect */
         body::before {
             content: '';
@@ -125,8 +166,14 @@
             }
         }
 
-        /* Media Queries for responsiveness */
-        @media (max-width: 600px) {
+        /* Media Queries for Google Pixel 8a */
+        @media (max-width: 392px) {
+            body {
+                height: 100%;
+                justify-content: flex-start;
+                padding-top: 50px;
+            }
+
             .container {
                 width: 90%;
                 padding: 20px;
@@ -143,6 +190,11 @@
             .heart {
                 font-size: 40px;
             }
+
+            .flower, .star, .teddy {
+                width: 30px;
+                height: 30px;
+            }
         }
     </style>
 </head>
@@ -153,5 +205,10 @@
         <div class="heart">❤️</div>
         <p class="signature">With all my love, Shreyansh</p>
     </div>
+
+    <!-- Floating Elements -->
+    <div class="flower"></div>
+    <div class="star"></div>
+    <div class="teddy"></div>
 </body>
 </html>
